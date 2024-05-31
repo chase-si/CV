@@ -1,10 +1,13 @@
 - [Introduction](#introduction)
+- [Features](#features)
 - [Getting Started](#getting-started)
 
 # Introduction
-Chase's CV website.
+Chase's CV website. List some intersting features from the projects I did before.
 
-Build with Next.js
+Build with `Next.js`, `Tailwind CSS`.
+
+# Features
 
 # Getting Started
 
