@@ -1,5 +1,8 @@
 'use client'
 
+import Image from 'next/image'
+import HeroBg from './next.svg'
+
 import Nav from '../components/Nav/index'
 import Footer from '../components/Footer'
 
@@ -69,7 +72,7 @@ const blogPosts = [
   // More posts...
 ]
 
-export default function Example() {
+export default function Homepage() {
   return (
     <div className="bg-white">
       <header className="sticky inset-x-0 top-0 z-50 bg-white shadow">
