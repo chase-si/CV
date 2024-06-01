@@ -14,10 +14,6 @@ export default function TimeZone() {
 
       {/* table */}
       <div>
-        table
-        {/* <span className="fi fi-cn" />
-        <span className="fi fi-gr fis" /> */}
-
         <Table />
       </div>
     </>

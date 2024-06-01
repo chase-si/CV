@@ -5,9 +5,10 @@ import { classNames } from '@/lib/utils'
 const locations = [
   {
     name: 'BeiJing',
+    main: true,
     country: 'cn',
     timeZone: 'UTC+08:00',
-    workTime: [9, 18]
+    workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
   },
   {
     name: 'London',
@@ -33,7 +34,7 @@ function TableTh({ children, className }: TdThProps) {
     <th
       scope="col"
       className={classNames(
-        'px-3 py-3.5 text-left text-sm font-semibold text-gray-900',
+        'pr-3 py-3.5 text-left text-sm font-semibold text-gray-900',
         className || ''
       )}
     >
@@ -45,7 +46,7 @@ function TableTd({ children, className }: TdThProps) {
   return (
     <td
       className={classNames(
-        'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
+        'whitespace-nowrap pr-3 py-4 text-sm text-gray-500',
         className || ''
       )}
     >
@@ -72,8 +73,11 @@ export default function Table() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {locations.map((location) => (
-                  <tr key={location.name}>
+                {locations.map((location, idx) => (
+                  <tr
+                    key={location.name}
+                    className={idx === 0 ? 'border-2 border-dashed border-indigo-400' : ''}
+                  >
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                       <span>
                         {location.name}
@@ -85,7 +89,7 @@ export default function Table() {
                         key={i}
                         className={
                           classNames(
-                            i >= location.workTime[0] && i < location.workTime[1]
+                            i >= location.workTime[0] && i <= location.workTime[1]
                               ? 'bg-green-100'
                               : 'bg-red-100'
                           )
