@@ -1,29 +1,54 @@
 import React from 'react'
 
-import { classNames } from '@/lib/utils'
+import { classNames, cyclicNormalization, replaceTimeZoneToNum } from '@/lib/utils'
+import { CITY_TIMEZONES } from '../constans'
 
-const locations = [
-  {
-    name: 'BeiJing',
-    main: true,
-    country: 'cn',
-    timeZone: 'UTC+08:00',
-    workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-  },
-  {
-    name: 'London',
-    country: 'gb',
-    timeZone: 'UTC+00:00',
-    workTime: [1, 10]
-  },
-  {
-    name: 'Los Angeles',
-    country: 'us',
-    timeZone: 'UTC-08:00',
-    workTime: [17, 2]
-  }
-  // More people...
-]
+const BASIC_LOCATION = {
+  name: 'BeiJing',
+  main: true,
+  country: 'cn',
+  timeZone: 'UTC+08:00',
+  workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+const locations = Object.values(CITY_TIMEZONES)
+  .map((item) => {
+    const { short, cities } = item
+    return Object.entries(cities)
+      .map(([name, timeZone]) => ({
+        name,
+        timeZone,
+        country: short,
+        workTime: BASIC_LOCATION.workTime.map(basicTimeItem => {
+          const timeZoneDiff = replaceTimeZoneToNum(BASIC_LOCATION.timeZone)
+            - replaceTimeZoneToNum(timeZone)
+          return cyclicNormalization(basicTimeItem - timeZoneDiff)
+        })
+      }))
+  }).flat()
+
+// const locations = [
+//   {
+//     name: 'BeiJing',
+//     main: true,
+//     country: 'cn',
+//     timeZone: 'UTC+08:00',
+//     workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17]
+//   },
+//   {
+//     name: 'London',
+//     country: 'gb',
+//     timeZone: 'UTC+00:00',
+//     workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17].map(item => item - 8)
+//   },
+//   {
+//     name: 'Los Angeles',
+//     country: 'us',
+//     timeZone: 'UTC-08:00',
+//     workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17].map(item => cyclicNormalization(item - 16))
+//   }
+//   // More people...
+// ]
 
 type TdThProps = {
   children: React.ReactNode,
@@ -73,7 +98,10 @@ export default function Table() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {locations.map((location, idx) => (
+                {[
+                  BASIC_LOCATION,
+                  ...locations
+                ].map((location, idx) => (
                   <tr
                     key={location.name}
                     className={idx === 0 ? 'border-2 border-dashed border-indigo-400' : ''}
@@ -89,7 +117,7 @@ export default function Table() {
                         key={i}
                         className={
                           classNames(
-                            i >= location.workTime[0] && i <= location.workTime[1]
+                            location.workTime.includes(i)
                               ? 'bg-green-100'
                               : 'bg-red-100'
                           )

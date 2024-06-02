@@ -6,6 +6,11 @@ export function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
+/**
+ * @description handle number with in [0, 23]
+ * @unitest ./__test__/utils.test.js
+ * @returns
+ */
 export function cyclicNormalization(
   value: number,
   rangeMax = 23
@@ -17,4 +22,8 @@ export function cyclicNormalization(
   }
 
   return normalizedValue
+}
+
+export function replaceTimeZoneToNum(timeZone: string) {
+  return parseInt(timeZone.replace(/[A-Za-z]/g, ''))
 }
