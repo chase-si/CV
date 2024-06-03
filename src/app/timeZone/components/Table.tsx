@@ -1,5 +1,10 @@
-import React from 'react'
+'use client'
 
+import React from 'react'
+// import { useSelector } from 'react-redux'
+
+import { selectStatus } from '@/lib/redux/features/timeZone/timeZoneSlice'
+import { useAppSelector } from '@/lib/redux/hooks'
 import { classNames, cyclicNormalization, replaceTimeZoneToNum } from '@/lib/utils'
 import { CITY_TIMEZONES } from '../constans'
 
@@ -81,6 +86,9 @@ function TableTd({ children, className }: TdThProps) {
 }
 
 export default function Table() {
+  const status = useAppSelector(selectStatus)
+  console.log('status', status)
+
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="mt-8 flow-root">
