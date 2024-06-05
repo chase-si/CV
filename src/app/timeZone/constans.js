@@ -1,59 +1,59 @@
 export const CITY_TIMEZONES = {
-  // 'United States': {
-  //   flag: '🇺🇸',
-  //   short: 'us',
-  //   cities: {
-  //     'New York': 'UTC-05:00',
-  //     'Los Angeles': 'UTC-08:00',
-  //     Chicago: 'UTC-06:00',
-  //     Houston: 'UTC-06:00',
-  //     Phoenix: 'UTC-07:00'
-  //   }
-  // },
-  // Canada: {
-  //   flag: '🇨🇦',
-  //   short: 'ca',
-  //   cities: {
-  //     Toronto: 'UTC-05:00',
-  //     Vancouver: 'UTC-08:00',
-  //     Montreal: 'UTC-05:00',
-  //     Calgary: 'UTC-07:00',
-  //     Ottawa: 'UTC-05:00'
-  //   }
-  // },
-  // 'United Kingdom': {
-  //   flag: '🇬🇧',
-  //   short: 'gb',
-  //   cities: {
-  //     London: 'UTC+00:00',
-  //     Edinburgh: 'UTC+00:00',
-  //     Manchester: 'UTC+00:00',
-  //     Birmingham: 'UTC+00:00',
-  //     Glasgow: 'UTC+00:00'
-  //   }
-  // },
-  // Germany: {
-  //   flag: '🇩🇪',
-  //   short: 'de',
-  //   cities: {
-  //     Berlin: 'UTC+01:00',
-  //     Munich: 'UTC+01:00',
-  //     Frankfurt: 'UTC+01:00',
-  //     Hamburg: 'UTC+01:00',
-  //     Cologne: 'UTC+01:00'
-  //   }
-  // },
-  // France: {
-  //   flag: '🇫🇷',
-  //   short: 'fr',
-  //   cities: {
-  //     Paris: 'UTC+01:00',
-  //     Marseille: 'UTC+01:00',
-  //     Lyon: 'UTC+01:00',
-  //     Toulouse: 'UTC+01:00',
-  //     Nice: 'UTC+01:00'
-  //   }
-  // },
+  'United States': {
+    flag: '🇺🇸',
+    short: 'us',
+    cities: {
+      'New York': 'UTC-05:00',
+      'Los Angeles': 'UTC-08:00',
+      Chicago: 'UTC-06:00',
+      Houston: 'UTC-06:00',
+      Phoenix: 'UTC-07:00'
+    }
+  },
+  Canada: {
+    flag: '🇨🇦',
+    short: 'ca',
+    cities: {
+      Toronto: 'UTC-05:00',
+      Vancouver: 'UTC-08:00',
+      Montreal: 'UTC-05:00',
+      Calgary: 'UTC-07:00',
+      Ottawa: 'UTC-05:00'
+    }
+  },
+  'United Kingdom': {
+    flag: '🇬🇧',
+    short: 'gb',
+    cities: {
+      London: 'UTC+00:00',
+      Edinburgh: 'UTC+00:00',
+      Manchester: 'UTC+00:00',
+      Birmingham: 'UTC+00:00',
+      Glasgow: 'UTC+00:00'
+    }
+  },
+  Germany: {
+    flag: '🇩🇪',
+    short: 'de',
+    cities: {
+      Berlin: 'UTC+01:00',
+      Munich: 'UTC+01:00',
+      Frankfurt: 'UTC+01:00',
+      Hamburg: 'UTC+01:00',
+      Cologne: 'UTC+01:00'
+    }
+  },
+  France: {
+    flag: '🇫🇷',
+    short: 'fr',
+    cities: {
+      Paris: 'UTC+01:00',
+      Marseille: 'UTC+01:00',
+      Lyon: 'UTC+01:00',
+      Toulouse: 'UTC+01:00',
+      Nice: 'UTC+01:00'
+    }
+  },
   Australia: {
     flag: '🇦🇺',
     short: 'au',

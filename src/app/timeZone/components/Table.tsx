@@ -1,11 +1,11 @@
 'use client'
 
 import React from 'react'
-// import { useSelector } from 'react-redux'
 
 import { selectStatus } from '@/lib/redux/features/timeZone/timeZoneSlice'
 import { useAppSelector } from '@/lib/redux/hooks'
 import { classNames, cyclicNormalization, replaceTimeZoneToNum } from '@/lib/utils'
+
 import { CITY_TIMEZONES } from '../constans'
 
 const BASIC_LOCATION = {
@@ -31,29 +31,6 @@ const locations = Object.values(CITY_TIMEZONES)
         })
       }))
   }).flat()
-
-// const locations = [
-//   {
-//     name: 'BeiJing',
-//     main: true,
-//     country: 'cn',
-//     timeZone: 'UTC+08:00',
-//     workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17]
-//   },
-//   {
-//     name: 'London',
-//     country: 'gb',
-//     timeZone: 'UTC+00:00',
-//     workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17].map(item => item - 8)
-//   },
-//   {
-//     name: 'Los Angeles',
-//     country: 'us',
-//     timeZone: 'UTC-08:00',
-//     workTime: [9, 10, 11, 12, 13, 14, 15, 16, 17].map(item => cyclicNormalization(item - 16))
-//   }
-//   // More people...
-// ]
 
 type TdThProps = {
   children: React.ReactNode,

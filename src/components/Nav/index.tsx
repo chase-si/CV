@@ -11,7 +11,8 @@ import {
 const NAVIGATION = [
   { name: 'Homepage', href: '/' },
   { name: 'Blog', href: 'https://dashuaibi.asia/blog/archives/' },
-  { name: 'TimeZoneMap', href: '/timeZone' }
+  { name: 'TimeZoneMap', href: '/timeZone' },
+  { name: 'FlowChart', href: '/flowChart' }
 ]
 
 function Nav() {

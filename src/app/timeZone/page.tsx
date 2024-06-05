@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import 'flag-icons/css/flag-icons.min.css'
 
-import Select from './components/Select'
+import Form from './components/Form'
 import Table from './components/Table'
 
 export default function TimeZone() {
@@ -9,7 +8,7 @@ export default function TimeZone() {
     <>
       {/* form */}
       <div className="form">
-        <Select />
+        <Form />
       </div>
 
       {/* table */}

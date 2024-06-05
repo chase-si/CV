@@ -27,3 +27,7 @@ export function cyclicNormalization(
 export function replaceTimeZoneToNum(timeZone: string) {
   return parseInt(timeZone.replace(/[A-Za-z]/g, ''))
 }
+
+export function numToChar(num: number) {
+  return String.fromCharCode(65 + num)
+}
