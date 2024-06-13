@@ -13,6 +13,7 @@ const NAVIGATION = [
   { name: 'Blog', href: 'https://dashuaibi.asia/blog/archives/' },
   { name: 'TimeZoneMap', href: '/timeZone' },
   { name: 'FlowChart', href: '/flowChart' }
+  // { name: 'Test', href: '/test' }
 ]
 
 function Nav() {
