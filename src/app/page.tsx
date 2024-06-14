@@ -1,4 +1,8 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import HeroSectionBg from '@/components/SVG/HeroSectionBg'
+import { FollowingDotCursor } from '@/lib/customerCursor'
 
 const stats = [
   { label: 'Transactions every 24 hours', value: '44 million' },
@@ -67,8 +71,20 @@ const blogPosts = [
 ]
 
 export default function Homepage() {
+  useEffect(() => {
+    const cursorDot = new (FollowingDotCursor as any)({
+      mixBlendMode: 'difference',
+      dotWidth: 20,
+      color: 'rgb(218,156,15)'
+    })
+
+    return () => {
+      cursorDot.destroy()
+    }
+  }, [])
+
   return (
-    <>
+    <div>
       {/* Hero section */}
       <div className="relative isolate -z-10">
         <HeroSectionBg />
@@ -329,7 +345,7 @@ export default function Homepage() {
           ))}
         </div>
       </div>
-    </>
+    </div>
 
   )
 }
