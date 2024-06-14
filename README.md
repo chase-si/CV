@@ -37,9 +37,10 @@ Here's the development plan, and I'll also add some brief notes along the way.
 - [ ] config i18n
 
 ## HomePage
-- [ ] add intersting cursor effect
+- [X] add intersting cursor effect
 - [ ] text editor
 - [ ] change the Navbar to a transformed one when scrolling
+- [ ] FlowChat, TimeZone, 
 
 ## TimeRangePage
 - [X] basic UI/UE

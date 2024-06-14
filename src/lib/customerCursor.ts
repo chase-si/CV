@@ -1,4 +1,6 @@
-interface Position {
+import { throttle } from 'lodash'
+
+type Position = {
   x: number;
   y: number;
 }
@@ -42,7 +44,7 @@ export function FollowingDotCursor(options?: FollowingDotCursorOptions) {
   const element = hasWrapperEl || document.body
   const dotWidth = options?.dotWidth || 10
   const mixBlendMode = options?.mixBlendMode
-  const color = options?.color || '#323232a6'
+  const color = options?.color || '#323232'
 
   let width = window.innerWidth
   let height = window.innerHeight
@@ -95,7 +97,7 @@ export function FollowingDotCursor(options?: FollowingDotCursorOptions) {
   }
 
   function bindEvents() {
-    element.addEventListener('mousemove', onMouseMove)
+    element.addEventListener('mousemove', throttledOnMouseMove)
     window.addEventListener('resize', onWindowResize)
   }
 
@@ -125,6 +127,7 @@ export function FollowingDotCursor(options?: FollowingDotCursorOptions) {
     }
   }
 
+  const throttledOnMouseMove = throttle(onMouseMove, 100)
   function updateDot() {
     if (context) {
       context.clearRect(0, 0, width, height)
@@ -141,7 +144,7 @@ export function FollowingDotCursor(options?: FollowingDotCursorOptions) {
     if (canvas) {
       canvas.remove()
       cancelAnimationFrame(animationFrame)
-      element.removeEventListener('mousemove', onMouseMove)
+      element.removeEventListener('mousemove', throttledOnMouseMove)
       window.removeEventListener('resize', onWindowResize)
     }
   }

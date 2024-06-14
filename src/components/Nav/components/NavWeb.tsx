@@ -4,7 +4,7 @@ type WebNavProps = {
   navigations: Navigations[]
 }
 
-interface Navigations {
+type Navigations = {
   name: string
   href: string
 }
