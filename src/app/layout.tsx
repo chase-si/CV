@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import { StoreProvider } from './StoreProvider'
-import Nav from '../components/Nav/index'
-import Footer from '../components/Footer'
+import Nav from '../components/nav/index'
+import Footer from '../components/footer'
 
 import './globals.css'
 

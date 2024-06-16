@@ -8,7 +8,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 import { classNames } from '@/lib/utils'
 
-import Select from '@/components/Select'
+import Select from '@/components/select'
 
 import { CITY_TIMEZONES } from '../constans'
 
@@ -35,6 +35,7 @@ export default function Form() {
           selectedOpt={locations[0]}
           setSelected={() => {}}
         />
+        <input type="time" />
       </form>
     </div>
 

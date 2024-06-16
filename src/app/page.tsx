@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import HeroSectionBg from '@/components/SVG/HeroSectionBg'
+import HeroSectionBg from '@/components/svg/HeroSectionBg'
 import { FollowingDotCursor } from '@/lib/customerCursor'
 
 const stats = [
