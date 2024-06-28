@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import DropdownMenu from './DropdownMenu'
 
 type WebNavProps = {
@@ -16,13 +17,13 @@ function WebNav({
     <>
       <div className="hidden lg:flex lg:gap-x-12">
         {navigations.map((item) => (
-          <a
+          <Link
             key={item.name}
             href={item.href}
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             {item.name}
-          </a>
+          </Link>
         ))}
         <DropdownMenu />
       </div>

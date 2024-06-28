@@ -47,4 +47,6 @@ Here's the development plan, and I'll also add some brief notes along the way.
 - [ ] add a timer selector
 - [ ] allow to select data to render
 - [ ] save the data to localStorage
-
+- [ ] impovement from WF
+  - [ ] allow select the hour in the first row, show a dark green to it and the same ones in the rest rows
+  - [ ] show the localtime of other drak green ones
