@@ -9,6 +9,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { classNames } from '@/lib/utils'
 
 import Select from '@/components/select'
+import Slider from '@/components/slider'
 
 import { CITY_TIMEZONES } from '../constans'
 
@@ -30,6 +31,7 @@ export default function Form() {
   return (
     <div className="container mx-auto">
       <form>
+        <Slider />
         <Select
           options={locations}
           selectedOpt={locations[0]}
